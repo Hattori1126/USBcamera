@@ -18,7 +18,7 @@ LED.setting()
 
 for n in range(0, number, 1):
     count = n + 1
-    print(count + '/' + number)
+    print(str(count) + '/' + str(number))
     LED.turn_on()
     time.sleep(1)
 
