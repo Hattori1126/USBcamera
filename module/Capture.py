@@ -11,7 +11,7 @@ def create_folder(figurepath):
 
 
 # resolution
-def caputre(width, height):
+def capture(width, height):
     # take a photo
     capture = cv2.VideoCapture(0)
     capture.set(cv2.CAP_PROP_FRAME_WIDTH, width) ;
