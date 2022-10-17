@@ -4,7 +4,6 @@ import datetime
 
 
 # create folder
-# figurepath = os.getcwd() + '/camera_figure/'
 def create_folder(figurepath):
     if not os.path.exists(figurepath):
         os.mkdir(figurepath)
