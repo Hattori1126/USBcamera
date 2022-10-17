@@ -17,7 +17,8 @@ number = 3           # number of photos
 LED.setting()
 
 for n in range(0, number, 1):
-    print(str(n + 1) + '/' + number)
+    count = n + 1
+    print(count + '/' + number)
     LED.turn_on()
     time.sleep(1)
 
