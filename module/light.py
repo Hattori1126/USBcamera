@@ -1,14 +1,16 @@
 import RPi.GPIO as GPIO
 
 
+GPIO_number = 25
+
 def setting():
     GPIO.setmode(GPIO.BCM)
-    GPIO.setup(25, GPIO.OUT)
+    GPIO.setup(GPIO_number, GPIO.OUT)
 
 
 def turn_on():
-    GPIO.output(25, GPIO.HIGH)
+    GPIO.output(GPIO_number, GPIO.HIGH)
 
 
 def turn_off():
-    GPIO.output(25, GPIO.LOW)
+    GPIO.output(GPIO_number, GPIO.LOW)

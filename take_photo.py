@@ -2,31 +2,42 @@ import os
 import time
 from module import Capture as cap
 from module import light as LED
+from module import move_motor as stepmotor
 
 
 # create folder
 figurepath = os.getcwd() + '/camera_figure/'
 cap.create_folder(figurepath)
 
-# setting parameter
+# setting photo parameter
 width = 2592         # photo width
 height = 1944        # photo height
 number = 3           # number of photos
 
+# setting motor parameter
+wait = 0.001
+step = 10
+deg = step * 4096
+motor = stepmotor.C28BYJ48(IN1=2, IN2=3, IN3=4, IN4=17)
+
 # take photos
-LED.setting()
+if __name__ == '__main__':
+    LED.setting()
 
-for n in range(0, number, 1):
-    count = n + 1
-    print(str(count) + '/' + str(number))
-    LED.turn_on()
-    time.sleep(1)
+    for n in range(0, number, 1):
+        count = n + 1
+        print(str(count) + '/' + str(number))
 
-    img = cap.capture(width, height)
+        LED.turn_on()
+        time.sleep(1)
 
-    cap.save_photo(figurepath, img)
+        img = cap.capture(width, height)
 
-    LED.turn_off()
-    time.sleep(1)
+        cap.save_photo(figurepath, img)
 
-print('finish')
+        LED.turn_off()
+        motor.Step(deg, wait)
+        time.sleep(1)
+
+    print('finish')
+
