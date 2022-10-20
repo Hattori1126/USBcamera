@@ -25,6 +25,7 @@ if __name__ == '__main__':
     LED.setting()
 
     for n in range(0, number, 1):
+        LED.setting()
         count = n + 1
         print(str(count) + '/' + str(number))
 
