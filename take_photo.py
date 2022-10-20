@@ -16,7 +16,7 @@ number = 3           # number of photos
 
 # setting motor parameter
 wait = 0.001
-step = 10
+step = 1
 deg = step * 4096
 motor = stepmotor.C28BYJ48(IN1=2, IN2=3, IN3=4, IN4=17)
 
@@ -26,6 +26,7 @@ if __name__ == '__main__':
 
     for n in range(0, number, 1):
         LED.setting()
+        motor.__init__()
         count = n + 1
         print(str(count) + '/' + str(number))
 
