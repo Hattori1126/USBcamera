@@ -36,7 +36,8 @@ if __name__ == '__main__':
         cap.save_photo(figurepath, img)
 
         LED.turn_off()
-        motor.Step(deg, wait)
+        motor.Step_CW(deg, wait)
+        motor.Cleanup()
         time.sleep(1)
 
     print('finish')

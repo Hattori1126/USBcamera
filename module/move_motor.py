@@ -60,11 +60,3 @@ class C28BYJ48:
     def Cleanup(self):
         GPIO.cleanup()
 
-"""メイン関数"""
-if __name__ == '__main__':
-    StepMoter = C28BYJ48(IN1=2, IN2=3, IN3=4, IN4=17)
-
-StepMoter.Step_CW(4096,0.001)
-sleep(0.5)
-StepMoter.Step_CCW(4096,0.001)
-sleep(0.5)
