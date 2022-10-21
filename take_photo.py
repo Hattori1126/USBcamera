@@ -29,7 +29,7 @@ motor = stepmotor.C28BYJ48(IN1, IN2, IN3, IN4)
 if __name__ == '__main__':
     # create now figure folder
     now = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
-    folderpath = figurepath + now
+    folderpath = figurepath + now +'/'
     cap.create_folder(folderpath)
 
     LED.setting()
