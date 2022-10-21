@@ -18,10 +18,10 @@ number = 3           # number of photos
 wait = 0.001
 step = 1
 deg = step * 4096
-IN1 = 2
-IN2 = 3
-IN3 = 4
-IN4 = 17
+IN1 = 2              # blue to blue
+IN2 = 3              # pink to red
+IN3 = 4              # yellow to yellow
+IN4 = 17             # orange to black
 motor = stepmotor.C28BYJ48(IN1, IN2, IN3, IN4)
 
 # take photos
@@ -29,8 +29,6 @@ if __name__ == '__main__':
     LED.setting()
 
     for n in range(0, number, 1):
-        LED.setting()
-        motor.__init__(IN1, IN2, IN3, IN4)
         count = n + 1
         print(str(count) + '/' + str(number))
 
@@ -43,8 +41,8 @@ if __name__ == '__main__':
 
         LED.turn_off()
         motor.Step_CW(deg, wait)
-        motor.Cleanup()
         time.sleep(1)
 
-    print('finish')
+motor.Cleanup()
+print('finish')
 
