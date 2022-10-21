@@ -24,7 +24,7 @@ if __name__ == '__main__':
         if step > 0:
             motor.Step_CW(deg, wait)
         elif step < 0:
-            motor.Step_CCW(deg, wait)
+            motor.Step_CCW(-deg, wait)
         else:
             break
 
