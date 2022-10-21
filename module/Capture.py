@@ -26,4 +26,4 @@ def capture(width, height):
 def save_photo(figurepath, img, number):
 
     # save a photo
-    cv2.imwrite(figurepath + number + '.png', img)
+    cv2.imwrite(figurepath + str(number) + '.png', img)
