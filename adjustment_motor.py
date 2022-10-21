@@ -17,7 +17,7 @@ motor = stepmotor.C28BYJ48(IN1, IN2, IN3, IN4)
 if __name__ == '__main__':
     while True:
         # Select step
-        print('Select_step')
+        print('Select_step(int)')
         step = int(input())
         deg = step * 4096
 

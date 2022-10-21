@@ -23,9 +23,7 @@ def capture(width, height):
     return img
 
 
-def save_photo(figurepath, img):
-    # get now time
-    now = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
+def save_photo(figurepath, img, number):
 
     # save a photo
-    cv2.imwrite(figurepath + now + '.png', img)
+    cv2.imwrite(figurepath + number + '.png', img)
