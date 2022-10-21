@@ -18,7 +18,7 @@ if __name__ == '__main__':
     while True:
         # Select step
         print('Select_step')
-        step = float(input())
+        step = int(input())
         deg = step * 4096
 
         if step > 0:
