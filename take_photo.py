@@ -18,7 +18,7 @@ number = 5           # number of photos
 
 # setting motor parameter
 wait = 0.001
-step = 1
+step = 15
 deg = step * 4096
 IN1 = 2              # blue to blue
 IN2 = 3              # pink to red
