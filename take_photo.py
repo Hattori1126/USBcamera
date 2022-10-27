@@ -4,6 +4,7 @@ import datetime
 from module import Capture as cap
 from module import light as LED
 from module import move_motor as stepmotor
+from module import panorama as pano
 
 
 # create folder
@@ -48,6 +49,8 @@ if __name__ == '__main__':
         LED.turn_off()
         motor.Step_CW(deg, wait)
         time.sleep(1)
+
+    pano.create_panorama(folderpath)
 
 motor.Cleanup()
 print('finish')
