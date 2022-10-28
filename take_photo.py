@@ -51,7 +51,8 @@ if __name__ == '__main__':
         time.sleep(1)
 
     pano.create_panorama(folderpath)
+    motor.Step_CCW(deg*number, wait)
+    motor.Cleanup()
 
-motor.Cleanup()
 print('finish')
 
