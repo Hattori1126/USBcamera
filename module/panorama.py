@@ -23,7 +23,7 @@ def create_panorama(figurepath):
 
     stitcher = cv.Stitcher_create()
 
-    status, stitched = stitcher.stitch(imgs)[0]
+    status, stitched = stitcher.stitch(imgs)
 
     # 画面に表示する
     # cv.imshow('result', stitched)
