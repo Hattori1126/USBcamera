@@ -1,7 +1,6 @@
 from module import move_motor as stepmotor
 
 
-
 # setting motor parameter
 wait = 0.001
 step = 1

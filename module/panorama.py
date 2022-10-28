@@ -1,4 +1,3 @@
-import os
 import cv2 as cv
 import glob
 
@@ -21,7 +20,7 @@ def create_panorama(figurepath):
     for n in range(0, len(imgspath), 1):
         imgs.append(cv.imread(imgspath[n]))
 
-    stitcher = cv.Stitcher_create()
+    stitcher = cv.Stitcher_create(cv.Stitcher_SCANS)
 
     status, stitched = stitcher.stitch(imgs)
 
