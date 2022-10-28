@@ -40,7 +40,7 @@ if __name__ == '__main__':
         print(str(count) + '/' + str(number))
 
         LED.turn_on()
-        time.sleep(1)
+        time.sleep(5)
 
         img = cap.capture(width, height)
 
