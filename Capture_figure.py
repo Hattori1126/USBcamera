@@ -5,6 +5,7 @@ import datetime
 # resolution
 WIDTH = 2592
 HEIGHT = 1944
+FOCUS = 260
 
 # get now time
 now = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
@@ -18,6 +19,7 @@ if not os.path.exists(figurepath):
 capture = cv2.VideoCapture(0)
 capture.set(cv2.CAP_PROP_FRAME_WIDTH, WIDTH) ;
 capture.set(cv2.CAP_PROP_FRAME_HEIGHT, HEIGHT);
+capture.set(cv2.CAP_PROP_FOCUS, FOCUS)
 
 ret, img = capture.read()
 
