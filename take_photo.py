@@ -16,7 +16,7 @@ cap.create_folder(figurepath)
 width = 2592         # photo width
 height = 1944        # photo height
 number = 5           # number of photos
-value = 1000
+value = 200
 
 # setting motor parameter
 wait = 0.001
@@ -42,7 +42,7 @@ if __name__ == '__main__':
     for n in range(0, number, 1):
         count = n + 1
         print(str(count) + '/' + str(number))
-        focus.create_goodbadpath(figurepath)
+        focus.create_goodbadpath(folderpath)
 
         LED.turn_on()
         time.sleep(5)
@@ -50,7 +50,7 @@ if __name__ == '__main__':
         img = cap.capture(width, height)
 
         # cap.save_photo(folderpath, img, n)
-        focus.capture_focus(width, height, value, figurepath, n)
+        focus.capture_focus(width, height, value, folderpath, n)
 
         LED.turn_off()
         motor.Step_CW(deg, wait)

@@ -2,6 +2,7 @@ import cv2
 import os
 import datetime
 
+
 # resolution
 WIDTH = 2592
 HEIGHT = 1944

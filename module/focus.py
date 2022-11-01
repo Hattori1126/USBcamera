@@ -1,11 +1,9 @@
 import cv2
 import os
+import time
 
 
 class FOCUS:
-    def __init__(self):
-
-
     def variance_of_laplacian(self, image):
         return cv2.Laplacian(image, cv2.CV_64F)
 
@@ -26,8 +24,9 @@ class FOCUS:
         capture.set(cv2.CAP_PROP_FRAME_HEIGHT, HEIGHT);
 
         for n in range(0, 250, 25):
-            print('focus_', + str(n))
             capture.set(cv2.CAP_PROP_FOCUS, n)
+
+            time.sleep(3)
 
             ret, img = capture.read()
             gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -38,10 +37,8 @@ class FOCUS:
                 cv2.imwrite(figurepath + str(number) + '.png', img)
 
             if laplacian.var() >= value:
-                cv2.imwrite(self.goodpath + str(n) + '(' + str(laplacian.var()) + ').png', img)
+                cv2.imwrite(self.goodpath + str(number) + '_' + str(n) + '(' + str(laplacian.var()) + ').png', img)
             else:
-                cv2.imwrite(self.badpath + str(n) + '(' + str(laplacian.var()) + ').png', img)
-
-
+                cv2.imwrite(self.badpath + str(number) + '_' + str(n) + '(' + str(laplacian.var()) + ').png', img)
 
         capture.release()
