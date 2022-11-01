@@ -16,7 +16,7 @@ cap.create_folder(figurepath)
 width = 2592         # photo width
 height = 1944        # photo height
 number = 5           # number of photos
-value = 200
+value = 300
 
 # setting motor parameter
 wait = 0.001
